@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multilang Demo - Page 1</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      function changeLanguage(language) {
+        const elements = document.querySelectorAll("[data-en], [data-fr]");
+        elements.forEach((element) => {
+          element.innerHTML = element.getAttribute(`data-${language}`);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1 data-en="Page 1" data-fr="Page 1">Page 1</h1>
+      <div class="language-selector">
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('fr')">Français</button>
+      </div>
+    </header>
+
+    <main>
+      <h2 data-en="Welcome to Page 1" data-fr="Bienvenue à la page 1">
+        Welcome to Page 1
+      </h2>
+      <p
+        data-en="This is an example page."
+        data-fr="Ceci est une page d'exemple."
+      >
+        This is an example page.
+      </p>
+    </main>
+
+    <footer>
+      <p data-en="Thank you for visiting!" data-fr="Merci de votre visite!">
+        Thank you for visiting!
+      </p>
+    </footer>
+  </body>
+</html>
